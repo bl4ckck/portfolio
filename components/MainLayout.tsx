@@ -10,23 +10,9 @@ type Props = {
     description: string
 }
 
-const MainLayout: NextPage<Props> = (props) => {
-    const {
-        scrolling,
-        time,
-        speed,
-        direction,
-        position,
-        relativeDistance,
-        totalDistance
-    } = useScroll({
-        onScrollStart: () => {},
-        onScrollEnd: () => {}
-    });
-    console.log(position)
-    
+const MainLayout: NextPage<Props> = (props) => {    
     return (
-        <div className="asd">
+        <>
             <Head>
                 <title>{props.title}</title>
                 <meta charSet="utf-8" />
@@ -50,7 +36,7 @@ const MainLayout: NextPage<Props> = (props) => {
                     </span>
                 </a>
             </footer>
-        </div>
+        </>
     )
 }
 
