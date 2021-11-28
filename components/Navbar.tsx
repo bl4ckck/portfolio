@@ -5,14 +5,10 @@ import React from "react"
 import Link from 'next/link'
 import { useSpring, animated } from '@react-spring/web'
 import { useScroll } from "../hooks/useScroll"
+import MenuItem, { ITEM_TYPES } from "./navbar/MenuItem"
 
 interface Props {
     isScroll?: boolean
-}
-
-type navItem = {
-    name: string,
-    url: string,
 }
 
 // const navItems = [{navItem.name, url}]
@@ -31,29 +27,32 @@ const Navbar: React.FC<Props> = (props) => {
         onScrollEnd: () => { }
     });
     console.log(position.y > 0 ? "tampil navbar" : "awe")
-    const fadeAnimation = useSpring({ to: { opacity: 1 }, from: { opacity: 0 }, delay: 500 })
+
+    const [val, toggle] = React.useState<boolean>(false);
+    
+    const fadeAnimation = useSpring({ to: { opacity: 1 }, from: { opacity: 0 }, delay: 200 })
     const bounceAnimation = useSpring({ from: { x: position.y > 0 ? -10 : 0 }, to: { x: position.y > 0 ? 10 : 0 } })
 
     return (
-        <animated.div className={"fixed w-full top-0 z-10 bg-white py-5" + `${position.y > 0 ? " shadow-cust2" : ""} `}>
+        <animated.div style={fadeAnimation} className={"fixed w-full top-0 z-10 bg-white py-5" + `${position.y > 0 ? " shadow-cust2" : ""} `}>
             <div className="flex items-center justify-between font-semibold uppercase md:mx-24">
                 <animated.div style={
                     bounceAnimation
-                } className="px-2 font-mono text-2xl font-bold normal-case border-2 border-black rounded-lg">
+                } className="px-2 font-mono text-2xl font-bold normal-case border-2 border-black rounded-2xl">
                     <Link href="/">
                         alvin.
                     </Link>
                 </animated.div>
                 <div className="flex md:space-x-10">
-                    <Link href="/projects">
+                    <MenuItem href="/projects" type={ITEM_TYPES.HOVER}>
                         Projects
-                    </Link>
-                    <Link href="/experience">
+                    </MenuItem>
+                    <MenuItem href="/experience" type={ITEM_TYPES.HOVER}>
                         Experience
-                    </Link>
-                    <Link href="/education">
+                    </MenuItem>
+                    <MenuItem href="/education" type={ITEM_TYPES.HOVER}>
                         Education
-                    </Link>
+                    </MenuItem>
                 </div>
                 <div className="flex space-x-5">
                     <a href="https://www.linkedin.com/in/alvin747/" target="_blank">

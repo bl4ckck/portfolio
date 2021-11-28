@@ -6,7 +6,10 @@ module.exports = {
       colors: {
         gray: {
           drib1: "#f8f7f1",
-          drib2: "#ebf2eb",
+          drib2: {
+            DEFAULT: "#ebf2eb",
+            500: "#bed5be"
+          },
           darkest: "#1f2d3d",
           dark: "#3c4858",
           DEFAULT: "#c0ccda",
