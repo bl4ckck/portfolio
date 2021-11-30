@@ -46,26 +46,20 @@ export const Navbar: React.FC<Props> = (props) => {
                     </Link>
                 </animated.div>
                 <div className="flex md:space-x-10">
-                    <MenuItem href="/projects" type={ITEM_TYPES.HOVER}>
+                    <MenuItem isIcon={false} href="/projects" type={ITEM_TYPES.HOVER}>
                         Projects
                     </MenuItem>
-                    <MenuItem href="/experience" type={ITEM_TYPES.HOVER}>
+                    <MenuItem isIcon={false} href="/experience" type={ITEM_TYPES.HOVER}>
                         Experience
                     </MenuItem>
-                    <MenuItem href="/education" type={ITEM_TYPES.HOVER}>
+                    <MenuItem isIcon={false} href="/education" type={ITEM_TYPES.HOVER}>
                         Education
                     </MenuItem>
                 </div>
                 <div className="flex items-center space-x-5">
-                    <a href="https://www.linkedin.com/in/alvin747/" target="_blank">
-                        <i className="text-lg cursor-pointer fas fa-linkedin"></i>
-                    </a>
-                    <a href="mailto:alvin.naufal3@gmail.com">
-                        <i className="text-xl cursor-pointer fas fa-mail"></i>
-                    </a>
-                    <a href="tel:+6287782740685">
-                        <i className="text-xl cursor-pointer fas fa-phone-outline"></i>
-                    </a>
+                    <MenuItem isIcon={true} icon="fa-linkedin" href="https://www.linkedin.com/in/alvin747/" type={ITEM_TYPES.HOVER_ICON} />
+                    <MenuItem isIcon={true} icon="fa-mail" href="mailto:alvin.naufal3@gmail.com" type={ITEM_TYPES.HOVER_ICON} />
+                    <MenuItem isIcon={true} icon="fa-phone-outline" href="tel:+6287782740685" type={ITEM_TYPES.HOVER_ICON} />
                 </div>
             </div>
         </animated.div>
