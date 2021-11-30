@@ -4,16 +4,16 @@ aligning - https://css-tricks.com/almanac/properties/a/align-items/
 import React from "react"
 import Link from 'next/link'
 import { useSpring, animated } from '@react-spring/web'
-import { useScroll } from "../hooks/useScroll"
-import MenuItem, { ITEM_TYPES } from "./navbar/MenuItem"
-
+import { useScroll } from "../../hooks/useScroll"
+import MenuItem from "./MenuItem"
+import { ITEM_TYPES } from "../../types/navbar"
+// INavbar
 interface Props {
     isScroll?: boolean
 }
-
 // const navItems = [{navItem.name, url}]
 
-const Navbar: React.FC<Props> = (props) => {
+export const Navbar: React.FC<Props> = (props) => {
     const {
         scrolling,
         time,
@@ -29,12 +29,14 @@ const Navbar: React.FC<Props> = (props) => {
     console.log(position.y > 0 ? "tampil navbar" : "awe")
 
     const [val, toggle] = React.useState<boolean>(false);
+
+    const defaultProps = {boxShadow: "none"}
     
-    const fadeAnimation = useSpring({ to: { opacity: 1 }, from: { opacity: 0 }, delay: 200 })
+    const fadeAnimation = useSpring({ boxShadow: position.y > 0 ? "0 1px 2px 0 rgb(0 0 0 / 10%)" : "0 0px 0px 0 rgb(0 0 0 / 0%)"})
     const bounceAnimation = useSpring({ from: { x: position.y > 0 ? -10 : 0 }, to: { x: position.y > 0 ? 10 : 0 } })
 
     return (
-        <animated.div style={fadeAnimation} className={"fixed w-full top-0 z-10 bg-white py-5" + `${position.y > 0 ? " shadow-cust2" : ""} `}>
+        <animated.div style={fadeAnimation} className="fixed top-0 z-10 w-full py-5 bg-white">
             <div className="flex items-center justify-between font-semibold uppercase md:mx-24">
                 <animated.div style={
                     bounceAnimation
@@ -54,7 +56,7 @@ const Navbar: React.FC<Props> = (props) => {
                         Education
                     </MenuItem>
                 </div>
-                <div className="flex space-x-5">
+                <div className="flex items-center space-x-5">
                     <a href="https://www.linkedin.com/in/alvin747/" target="_blank">
                         <i className="text-lg cursor-pointer fas fa-linkedin"></i>
                     </a>
@@ -69,5 +71,3 @@ const Navbar: React.FC<Props> = (props) => {
         </animated.div>
     )
 }
-
-export default Navbar
