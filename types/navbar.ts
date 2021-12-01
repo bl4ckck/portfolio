@@ -24,13 +24,13 @@ export interface BaseIconProps extends Omit<BasePropsNavbar, 'isIcon' | 'type'> 
     readonly size?: string
     /** Default value: 1.75rem (28px) */
     readonly lineHeight?: string
-    readonly padding?: string
+    readonly margin?: string
 }
 
 export type PropsNavbar = BasePropsNavbar | BaseIconProps
 // export interface PropsNavbar extends BaseIconProps {}
 
-export default interface INavbar<T = {}, J = JSX.Element> {
+export interface INavbarMenu<T = {}, J = JSX.Element> {
     RenderDefault(param?: T): J
     RenderDefaultIcon(param?: T): J
     RenderHover(param?: T): J

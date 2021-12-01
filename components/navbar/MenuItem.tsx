@@ -2,16 +2,16 @@
 import React from "react"
 import Link from "next/link"
 import { animated, useSpring } from "@react-spring/web";
-import INavbar, { ITEM_TYPES, PropsNavbar } from "../../types/navbar";
+import { INavbarMenu, ITEM_TYPES, PropsNavbar } from "../../types/navbar";
 
-// const MenuItem: React.FC<Props<ITEM_TYPES>> = (props, nav: INavbar<{}> ) => {
 const MenuItem: React.FC<PropsNavbar> = (props) => {
     const iconProps = props.isIcon ? props : undefined
     
     const [isHover, setHover] = React.useState<boolean>(false);
-    const fadeAnimation = useSpring({ to: { opacity: isHover === false ? 1 : 0.5, borderLeftWidth: isHover ? "5px" : "0", borderRightWidth: isHover ? "5px" : "0"}, from: { opacity: 1 }, delay: 0 })
-// props.
-    const RenderMenu: INavbar<{}> = {
+    const fadeAnimation = useSpring({ opacity: isHover ? 0.5 : 1, delay: 0.8 })
+    const slideUpAnimation = useSpring({ y: isHover ? -3 : 0, color: isHover ? "#43a48c" : "black"})
+    
+    const RenderMenu: INavbarMenu<{}> = {
         RenderDefault() {
             return (
                 <Link href={props.href}>
@@ -22,7 +22,7 @@ const MenuItem: React.FC<PropsNavbar> = (props) => {
         RenderDefaultIcon() {
             return (
                 <a href={props.href} target="_blank">
-                    <i className={`"cursor-pointer fas ${iconProps?.icon}`} style={{ fontSize: props.isIcon ? props.size : "1.125rem", lineHeight: props.isIcon ? props.lineHeight : "1.75rem", padding: iconProps?.padding }}></i>
+                    <i className={`cursor-pointer fas ${iconProps?.icon}`} style={{ fontSize: iconProps?.size ? iconProps?.size : "1.125rem", lineHeight: iconProps?.lineHeight ? iconProps.lineHeight : "1.75rem" }}></i>
                 </a>
             )
         },
@@ -45,9 +45,16 @@ const MenuItem: React.FC<PropsNavbar> = (props) => {
         },
         RenderHoverIcon() {
             return (
-                <a href={props.href} target="_blank" style={{ padding: iconProps?.padding }}>
+                <animated.a href={props.href} target="_blank" style={slideUpAnimation} onMouseOver={(e) => {
+                    e.preventDefault()
+                    setHover(true)
+                    console.log(isHover)
+                }} onMouseOut={(e) => {
+                    e.preventDefault()
+                    setHover(false)
+                }}>
                     <i className={`cursor-pointer fas ${iconProps?.icon}`} style={{ fontSize: iconProps?.size ? iconProps?.size : "1.125rem", lineHeight: iconProps?.lineHeight ? iconProps.lineHeight : "1.75rem"}}></i>
-                </a>
+                </animated.a>
             )
         }
     }
