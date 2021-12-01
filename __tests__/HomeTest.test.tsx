@@ -3,7 +3,7 @@ import "@testing-library/jest-dom/extend-expect";
 import { Navbar } from "../components"
 
 test("Check navbar menu", () => {
-  const { getByText } = render(<Navbar />);
-  
-  expect(getByText("Experience")).toBeInTheDocument();
+	const { getByText } = render(<Navbar />);
+	
+	expect(getByText("Experience")).toBeInTheDocument();
 });

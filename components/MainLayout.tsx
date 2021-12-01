@@ -3,7 +3,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { useScroll } from "../hooks/useScroll"
 import styles from '../styles/Home.module.css'
-import { Navbar } from "./index"
+import Navbar from "./navbar"
 
 type Props = {
     title: string,

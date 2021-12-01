@@ -1,30 +1,30 @@
 export default interface IScroll {
-    directionType: DirectionType,
-    scrollDataType: ScrollDataType,
-    options: OptionsType
+		directionType: DirectionType,
+		scrollDataType: ScrollDataType,
+		options: OptionsType
 }
 
 export type DirectionType = {
-  x: string | null;
-  y: string | null;
+	x: string | null;
+	y: string | null;
 };
 
 export type XYType = {
-  x: number;
-  y: number;
+	x: number;
+	y: number;
 };
 
 export type ScrollDataType = {
-  scrolling: boolean;
-  time: number;
-  direction: DirectionType;
-  speed: XYType;
-  totalDistance: XYType;
-  relativeDistance: XYType;
-  position: XYType;
+	scrolling: boolean;
+	time: number;
+	direction: DirectionType;
+	speed: XYType;
+	totalDistance: XYType;
+	relativeDistance: XYType;
+	position: XYType;
 };
 
 export type OptionsType = {
-  onScrollStart?: Function;
-  onScrollEnd?: Function;
+	onScrollStart?: Function;
+	onScrollEnd?: Function;
 };

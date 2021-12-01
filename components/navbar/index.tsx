@@ -13,7 +13,7 @@ interface Props {
 }
 // const navItems = [{navItem.name, url}]
 
-export const Navbar: React.FC<Props> = (props) => {
+const Navbar: React.FC<Props> = (props) => {
     const {
         scrolling,
         time,
@@ -65,3 +65,5 @@ export const Navbar: React.FC<Props> = (props) => {
         </animated.div>
     )
 }
+
+export default Navbar
