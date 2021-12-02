@@ -1,6 +1,8 @@
+// flex cheatsheet https://stackoverflow.com/questions/42613359/how-does-flex-wrap-work-with-align-self-align-items-and-align-content
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
+import Chip from '../components/chip'
 import MainLayout from '../components/MainLayout'
 
 const Home: NextPage = () => {
@@ -21,11 +23,32 @@ const Home: NextPage = () => {
 						<div className="mt-8 text-sm font-semibold text-gray-500 mb-7">
 							CONTACT
 						</div>
-						<div className="text-sm">
+						<p className="text-sm">
 							Bekasi, Indonesia
+						</p>
+						<a href="mailto:alvin.naufal3@gmail.com" className="mt-1 text-sm font-bold underline">
+							<i className="cursor-pointer fas fa-mail" /> alvin.naufal3@gmail.com
+						</a>
+					</div>
+					<div>
+						<div className="text-sm font-semibold text-gray-500 mb-7">
+							SKILLS
+						</div>
+						<div className="flex flex-wrap items-end content-start">
+							{/* <div className='flex-grow-0'>
+								<Chip title="ini" brand={false} />
+							</div> */}
+							<Chip title="React Js" brand={false} />
+							<Chip title="React Native" brand={false} />
+							<Chip title="Node.js" brand={false} />
+							<Chip title="Express.js" brand={false} />
+							<Chip title="Go" brand={false} />
+							<Chip title="PHP" brand={false} />
+							<Chip title="Laravel" brand={false} />
+							<Chip title="Codeigniter" brand={false} />
+							<Chip title="PostgreSQL" brand={false} />
 						</div>
 					</div>
-					<div className="">1</div>
 					<div className="rounded-full bg-gray-drib2">
 						{/* <div className='block mx-auto'> */}
 						<img className="block max-w-full mx-auto" style={{ minHeight: "380px", maxHeight: "380px" }} src="/assets/images/profile.png" />

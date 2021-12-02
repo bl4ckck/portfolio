@@ -22,7 +22,7 @@ const MenuItem: React.FC<PropsNavbar> = (props) => {
         RenderDefaultIcon() {
             return (
                 <a href={props.href} target="_blank">
-                    <i className={`cursor-pointer fas ${iconProps?.icon}`} style={{ fontSize: iconProps?.size ? iconProps?.size : "1.125rem", lineHeight: iconProps?.lineHeight ? iconProps.lineHeight : "1.75rem" }}></i>
+                    <i className={`cursor-pointer fas ${iconProps?.icon}`} style={{ fontSize: iconProps?.size ? iconProps?.size : "1.125rem", lineHeight: iconProps?.lineHeight ? iconProps.lineHeight : "1.75rem" }} />
                 </a>
             )
         },
@@ -53,7 +53,7 @@ const MenuItem: React.FC<PropsNavbar> = (props) => {
                     e.preventDefault()
                     setHover(false)
                 }}>
-                    <i className={`cursor-pointer fas ${iconProps?.icon}`} style={{ fontSize: iconProps?.size ? iconProps?.size : "1.125rem", lineHeight: iconProps?.lineHeight ? iconProps.lineHeight : "1.75rem"}}></i>
+                    <i className={`cursor-pointer fas ${iconProps?.icon}`} style={{ fontSize: iconProps?.size ? iconProps?.size : "1.125rem", lineHeight: iconProps?.lineHeight ? iconProps.lineHeight : "1.75rem"}} />
                 </animated.a>
             )
         }

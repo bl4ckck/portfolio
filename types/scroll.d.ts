@@ -1,6 +1,6 @@
 export default interface IScroll {
-		directionType: DirectionType,
-		scrollDataType: ScrollDataType,
+		directionType: DirectionType
+		scrollDataType: ScrollDataType
 		options: OptionsType
 }
 
