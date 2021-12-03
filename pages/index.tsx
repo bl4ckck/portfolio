@@ -5,6 +5,7 @@ import Image from 'next/image'
 
 import Chip from '../components/chip'
 import MainLayout from '../components/MainLayout'
+import Timeline from '../components/timeline'
 
 import { DefaultValueBrandChip } from "../constants"
 
@@ -15,7 +16,7 @@ const Home: NextPage = () => {
 				<title>Home</title>
 			</Head>
 			<div className="bg-white mt-28">
-				<div className="grid grid-rows-1 md:h-96 md:grid-cols-3">
+				<div className="grid grid-rows-1 md:h-full md:grid-cols-3">
 					<div className="mx-12">
 						<div className="text-sm font-semibold text-gray-500 mb-7">
 							ABOUT ME
@@ -38,6 +39,11 @@ const Home: NextPage = () => {
 							SKILLS
 						</div>						
 						<Chip brand={true} options={DefaultValueBrandChip.options} />
+						<div className="mt-8 text-sm font-semibold text-gray-500 mb-7">
+							Experience
+						</div>
+						<Timeline title="awe" />
+						<Timeline title="awe" />
 					</div>
 					<div className="rounded-full bg-gray-drib2">
 						{/* <div className='block mx-auto'> */}

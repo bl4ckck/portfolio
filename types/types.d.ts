@@ -23,9 +23,11 @@ export type PropsChip = {
  * Timline Component
  * ===============
  */
-export type PropsTimline = {
-    date: string
-    color: string
-    title: string
-    subTitle: string
+export type PropsTimeline = {
+    date?: string
+    year?: number
+    isNested?: boolean
+    color?: string
+    title?: string
+    subTitle?: string
 }
