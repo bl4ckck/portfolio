@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('/assets/fonts/icomoon.eot?j34txi');
-  src:  url('/assets/fonts/icomoon.eot?j34txi#iefix') format('embedded-opentype'),
-    url('/assets/fonts/icomoon.ttf?j34txi') format('truetype'),
-    url('/assets/fonts/icomoon.woff?j34txi') format('woff'),
-    url('/assets/fonts/icomoon.svg?j34txi#icomoon') format('svg');
+  src:  url('/assets/fonts/icomoon.eot?7u254i');
+  src:  url('/assets/fonts/icomoon.eot?7u254i#iefix') format('embedded-opentype'),
+    url('/assets/fonts/icomoon.ttf?7u254i') format('truetype'),
+    url('/assets/fonts/icomoon.woff?7u254i') format('woff'),
+    url('/assets/fonts/icomoon.svg?7u254i#icomoon') format('svg');
   font-style: normal;
   font-weight: 900;
   font-display: block;
@@ -25,6 +25,41 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.fa-flutter:before {
+  content: "\e90e";
+  color: #02569b;
+}
+.fa-postgresql:before {
+  content: "\e90d";
+  color: #336791;
+}
+.fa-codeigniter:before {
+  content: "\e900";
+  color: #ee4623;
+}
+.fa-laravel:before {
+  content: "\e908";
+  color: #ff2d20;
+}
+.fa-php:before {
+  content: "\e909";
+  color: #777bb4;
+}
+.fa-node:before {
+  content: "\e90a";
+  color: #393;
+}
+.fa-go:before {
+  content: "\e90b";
+  color: #00add8;
+}
+.fa-react:before {
+  content: "\e90c";
+  color: #61dafb;
+}
+.fa-github:before {
+  content: "\f09b";
+}
 .fa-youtube:before {
   content: "\e906";
 }
@@ -46,6 +81,4 @@
 .fa-mail:before {
   content: "\e904";
 }
-.fa-github:before {
-  content: "\f09b";
-}
+
