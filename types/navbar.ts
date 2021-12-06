@@ -30,6 +30,8 @@ export interface BaseIconProps extends Omit<BasePropsNavbar, 'isIcon' | 'type'> 
 export type PropsNavbar = BasePropsNavbar | BaseIconProps
 // export interface PropsNavbar extends BaseIconProps {}
 
+export type PropsMenuDisplay = {type: "desktop"} | {type: "mobile"}
+
 export interface INavbarMenu<T = {}, J = JSX.Element> {
     RenderDefault(param?: T): J
     RenderDefaultIcon(param?: T): J
