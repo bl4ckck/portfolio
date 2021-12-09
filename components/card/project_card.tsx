@@ -1,7 +1,7 @@
 import Chip from "../chip"
 import { DefaultValueBrandChip } from "../../constants"
 
-const TimelineCard = (): JSX.Element => {
+const ProjectCard = (): JSX.Element => {
     return (
         <div className="max-w-lg px-2 py-2 mr-5 text-sm border shadow-md cursor-pointer x-2 border-t-1 rounded-xl">
             <div className="flex flex-col space-x-2 lg:flex-row">
@@ -27,4 +27,4 @@ const TimelineCard = (): JSX.Element => {
     )
 }
 
-export default TimelineCard
+export default ProjectCard

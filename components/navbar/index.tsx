@@ -50,7 +50,8 @@ const Navbar: React.FC<Props> = (props) => {
                         console.log("kebuka")
                     }} />
                     {MenuDisplay({ type: "desktop" })}
-                    <div className={`absolute shadow-xl top-0 right-0 w-1/2 z-50 h-screen transform duration-150 translate-x-5 bg-white ${isOpenMenu === true ? "visible opacity-100 -translate-x-0" : "invisible opacity-0"}`}>
+                    <div className={`absolute shadow-xl top-0 right-0 w-1/2 z-50 h-screen transform duration-150 translate-x-5 bg-white 
+                    ${isOpenMenu === true ? "visible opacity-100 -translate-x-0" : "invisible opacity-0"}`}>
                         <div className="flex flex-col items-center content-center justify-center text-sm">
                             <div className="">
                                 awe

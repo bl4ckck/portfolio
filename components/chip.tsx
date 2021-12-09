@@ -6,7 +6,7 @@ const Chip = (props: PropsChip): JSX.Element => {
             <div className="flex flex-wrap items-end content-start">
                 {props.options.map((item, i) => {
                     return (
-                        <div key={i} className="flex items-center px-2 mx-1 my-1 space-x-2 text-xs font-thin duration-500 transform translate-y-0 bg-white rounded-lg cursor-pointer select-none border-1 shadow-cust2 min-w-22 hover:-translate-y-1">
+                        <div key={i} className="flex items-center px-2 mx-1 my-1 space-x-2 text-sm font-thin duration-500 transform translate-y-0 bg-white rounded-lg cursor-pointer select-none border-1 shadow-cust2 min-w-22 hover:-translate-y-1">
                             <i className={"text-sm fas " + item.icon} />
                             <p className="text-gray-800">{item.title}</p>
                         </div>
